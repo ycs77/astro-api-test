@@ -1,0 +1,13 @@
+{
+  "name": "astro-api-test",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "hono": "^4.6.3"
+  },
+  "devDependencies": {
+    "vercel": "^37.6.0"
+  }
+}
