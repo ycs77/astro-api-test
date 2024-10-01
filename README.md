@@ -1,4 +1,6 @@
+# astro-api-test
+
 ```
-npm install
-npm run start
+yarn
+yarn start
 ```
