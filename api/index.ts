@@ -3,8 +3,14 @@ import { cors } from 'hono/cors'
 import { handle } from 'hono/vercel'
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'edge',
 }
+
+const items = [
+  { id: 1, tilte: 'Item 1' },
+  { id: 2, tilte: 'Item 2' },
+  { id: 3, tilte: 'Item 3' },
+]
 
 const app = new Hono().basePath('/api')
 
@@ -15,19 +21,11 @@ app.get('/', (c) => {
 })
 
 app.get('/items', (c) => {
-  return c.json([
-    { id: 1, tilte: 'Item 1' },
-    { id: 2, tilte: 'Item 2' },
-    { id: 3, tilte: 'Item 3' },
-  ])
+  return c.json(items)
 })
 
 app.get('/items/:id', (c) => {
-  const obj = [
-    { id: 1, tilte: 'Item 1' },
-    { id: 2, tilte: 'Item 2' },
-    { id: 3, tilte: 'Item 3' },
-  ].find(v => v.id == Number(c.req.param('id')))
+  const obj = items.find(v => v.id == Number(c.req.param('id')))
   if (!obj) return c.text('Not Found', 404)
   return c.json(obj)
 })
