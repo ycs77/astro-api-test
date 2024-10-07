@@ -7,9 +7,9 @@ export const config = {
 }
 
 const items = [
-  { id: 1, tilte: 'Item 1' },
-  { id: 2, tilte: 'Item 2' },
-  { id: 3, tilte: 'Item 3' },
+  { id: 1, title: 'Item 1' },
+  { id: 2, title: 'Item 2' },
+  { id: 3, title: 'Item 3' },
 ]
 
 const app = new Hono().basePath('/api')
